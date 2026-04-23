@@ -1,0 +1,472 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "graphify_project_rules",
+        "label": "Graphify Project Usage Rules",
+        "nodes": [
+          "claudemd_rule_read_graph_report",
+          "claudemd_rule_navigate_wiki",
+          "claudemd_rule_run_graphify_update"
+        ],
+        "relation": "implement",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "CLAUDE.md"
+      },
+      {
+        "id": "graphify_project_usage_rules",
+        "label": "Graphify Project Usage Rules",
+        "members": [
+          "claudemd_rule_read_graph_report",
+          "claudemd_rule_navigate_wiki",
+          "claudemd_rule_run_graphify_update"
+        ],
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "graphify-out/GRAPH_REPORT.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "Graphify Knowledge Graph",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 1-8",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_graphify_knowledge_graph",
+      "community": 0,
+      "norm_label": "graphify knowledge graph"
+    },
+    {
+      "label": "graphify-out/ Directory",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_graphify_out_dir",
+      "community": 0,
+      "norm_label": "graphify-out/ directory"
+    },
+    {
+      "label": "GRAPH_REPORT.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 6",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_graph_report",
+      "community": 0,
+      "norm_label": "graph_report.md"
+    },
+    {
+      "label": "graphify-out/wiki/index.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 7",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_wiki_index",
+      "community": 2,
+      "norm_label": "graphify-out/wiki/index.md"
+    },
+    {
+      "label": "graphify update . Command",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 8",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_graphify_update_cmd",
+      "community": 1,
+      "norm_label": "graphify update . command"
+    },
+    {
+      "label": "Rule: Read GRAPH_REPORT.md Before Architecture Questions",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 6",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_rule_read_graph_report",
+      "community": 0,
+      "norm_label": "rule: read graph_report.md before architecture questions"
+    },
+    {
+      "label": "Rule: Navigate Wiki Instead of Raw Files",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 7",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_rule_navigate_wiki",
+      "community": 2,
+      "norm_label": "rule: navigate wiki instead of raw files"
+    },
+    {
+      "label": "Rule: Run graphify update After Code Modifications",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 8",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_rule_run_graphify_update",
+      "community": 1,
+      "norm_label": "rule: run graphify update after code modifications"
+    },
+    {
+      "label": "vis-network Graph Visualization",
+      "file_type": "document",
+      "source_file": "graphify-out/graph.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "graph_html_vis_network",
+      "community": 1,
+      "norm_label": "vis-network graph visualization"
+    },
+    {
+      "label": "Community: Graph Report and Storage",
+      "file_type": "document",
+      "source_file": "graphify-out/graph.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "graph_html_community_graph_report_storage",
+      "community": 0,
+      "norm_label": "community: graph report and storage"
+    },
+    {
+      "label": "Community: Wiki Navigation",
+      "file_type": "document",
+      "source_file": "graphify-out/graph.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "graph_html_community_wiki_navigation",
+      "community": 2,
+      "norm_label": "community: wiki navigation"
+    },
+    {
+      "label": "Community: Incremental Update Rules",
+      "file_type": "document",
+      "source_file": "graphify-out/graph.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "graph_html_community_incremental_update_rules",
+      "community": 1,
+      "norm_label": "community: incremental update rules"
+    }
+  ],
+  "links": [
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/GRAPH_REPORT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "claudemd_graphify_knowledge_graph",
+      "_tgt": "claudemd_graphify_out_dir",
+      "source": "claudemd_graphify_knowledge_graph",
+      "target": "claudemd_graphify_out_dir"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "graphify-out/GRAPH_REPORT.md",
+      "source_location": null,
+      "weight": 0.8,
+      "_src": "claudemd_graphify_knowledge_graph",
+      "_tgt": "claudemd_rule_read_graph_report",
+      "source": "claudemd_graphify_knowledge_graph",
+      "target": "claudemd_rule_read_graph_report"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "graphify-out/GRAPH_REPORT.md",
+      "source_location": null,
+      "weight": 0.8,
+      "_src": "claudemd_graphify_knowledge_graph",
+      "_tgt": "claudemd_rule_navigate_wiki",
+      "source": "claudemd_graphify_knowledge_graph",
+      "target": "claudemd_rule_navigate_wiki"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "graphify-out/GRAPH_REPORT.md",
+      "source_location": null,
+      "weight": 0.8,
+      "_src": "claudemd_graphify_knowledge_graph",
+      "_tgt": "claudemd_rule_run_graphify_update",
+      "source": "claudemd_graphify_knowledge_graph",
+      "target": "claudemd_rule_run_graphify_update"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/graph.html",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "graph_html_vis_network",
+      "_tgt": "claudemd_graphify_knowledge_graph",
+      "source": "claudemd_graphify_knowledge_graph",
+      "target": "graph_html_vis_network"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/graph.html",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "graph_html_community_graph_report_storage",
+      "_tgt": "claudemd_graphify_knowledge_graph",
+      "source": "claudemd_graphify_knowledge_graph",
+      "target": "graph_html_community_graph_report_storage"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/GRAPH_REPORT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "claudemd_graphify_out_dir",
+      "_tgt": "claudemd_graph_report",
+      "source": "claudemd_graphify_out_dir",
+      "target": "claudemd_graph_report"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/GRAPH_REPORT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "claudemd_graphify_out_dir",
+      "_tgt": "claudemd_wiki_index",
+      "source": "claudemd_graphify_out_dir",
+      "target": "claudemd_wiki_index"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/graph.html",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "graph_html_community_graph_report_storage",
+      "_tgt": "claudemd_graphify_out_dir",
+      "source": "claudemd_graphify_out_dir",
+      "target": "graph_html_community_graph_report_storage"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/GRAPH_REPORT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "claudemd_graph_report",
+      "_tgt": "claudemd_rule_read_graph_report",
+      "source": "claudemd_graph_report",
+      "target": "claudemd_rule_read_graph_report"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/graph.html",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "graph_html_community_graph_report_storage",
+      "_tgt": "claudemd_graph_report",
+      "source": "claudemd_graph_report",
+      "target": "graph_html_community_graph_report_storage"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/GRAPH_REPORT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "claudemd_wiki_index",
+      "_tgt": "claudemd_rule_navigate_wiki",
+      "source": "claudemd_wiki_index",
+      "target": "claudemd_rule_navigate_wiki"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/graph.html",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "graph_html_community_wiki_navigation",
+      "_tgt": "claudemd_wiki_index",
+      "source": "claudemd_wiki_index",
+      "target": "graph_html_community_wiki_navigation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/GRAPH_REPORT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "claudemd_graphify_update_cmd",
+      "_tgt": "claudemd_rule_run_graphify_update",
+      "source": "claudemd_graphify_update_cmd",
+      "target": "claudemd_rule_run_graphify_update"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/graph.html",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "graph_html_community_incremental_update_rules",
+      "_tgt": "claudemd_graphify_update_cmd",
+      "source": "claudemd_graphify_update_cmd",
+      "target": "graph_html_community_incremental_update_rules"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/graph.html",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "graph_html_community_graph_report_storage",
+      "_tgt": "claudemd_rule_read_graph_report",
+      "source": "claudemd_rule_read_graph_report",
+      "target": "graph_html_community_graph_report_storage"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/graph.html",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "graph_html_community_wiki_navigation",
+      "_tgt": "claudemd_rule_navigate_wiki",
+      "source": "claudemd_rule_navigate_wiki",
+      "target": "graph_html_community_wiki_navigation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/graph.html",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "graph_html_community_incremental_update_rules",
+      "_tgt": "claudemd_rule_run_graphify_update",
+      "source": "claudemd_rule_run_graphify_update",
+      "target": "graph_html_community_incremental_update_rules"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "graphify-out/graph.html",
+      "source_location": null,
+      "weight": 0.85,
+      "_src": "graph_html_vis_network",
+      "_tgt": "graph_html_community_graph_report_storage",
+      "source": "graph_html_vis_network",
+      "target": "graph_html_community_graph_report_storage"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "graphify-out/graph.html",
+      "source_location": null,
+      "weight": 0.85,
+      "_src": "graph_html_vis_network",
+      "_tgt": "graph_html_community_wiki_navigation",
+      "source": "graph_html_vis_network",
+      "target": "graph_html_community_wiki_navigation"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "graphify-out/graph.html",
+      "source_location": null,
+      "weight": 0.85,
+      "_src": "graph_html_vis_network",
+      "_tgt": "graph_html_community_incremental_update_rules",
+      "source": "graph_html_vis_network",
+      "target": "graph_html_community_incremental_update_rules"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "graphify_project_rules",
+      "label": "Graphify Project Usage Rules",
+      "nodes": [
+        "claudemd_rule_read_graph_report",
+        "claudemd_rule_navigate_wiki",
+        "claudemd_rule_run_graphify_update"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md"
+    },
+    {
+      "id": "graphify_project_usage_rules",
+      "label": "Graphify Project Usage Rules",
+      "members": [
+        "claudemd_rule_read_graph_report",
+        "claudemd_rule_navigate_wiki",
+        "claudemd_rule_run_graphify_update"
+      ],
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "graphify-out/GRAPH_REPORT.md"
+    }
+  ]
+}

@@ -1,0 +1,359 @@
+You are a senior full-stack software engineer, senior security engineer, production SaaS architect, and reliability engineer.
+
+I am building a commercial AI-native SIEM / SOC platform. Build Module 9: Role-Based Access Control Module as production-quality code.
+
+Product area: Core Platform
+
+This module must integrate cleanly with all previous modules already implemented in my SIEM project. Do not build a demo. Build secure, reliable, maintainable, testable, enterprise-ready code suitable for a commercial cybersecurity product.
+
+==================================================
+PROJECT CONTEXT
+==================================================
+
+Application:
+- AI-native SIEM / SOC platform
+- Splunk-style workflow, but modern, open, AI-powered, scalable, reliable, privacy-aware, and cost-aware
+- Supports SaaS and self-hosted enterprise deployment
+
+Target users:
+- SOC analysts
+- Security administrators
+- MSSP operators
+- Enterprise security teams
+- Compliance teams
+- Platform administrators
+
+Default stack:
+- Backend: Node.js + Express.js
+- Database: PostgreSQL
+- ORM: Prisma
+- Frontend: React
+- Styling: Tailwind CSS
+- Validation: Zod
+- Auth: JWT access token + secure httpOnly refresh token cookie
+- Testing: Jest / Vitest / Supertest depending on existing setup
+- API style: REST API
+- Optional async processing: NATS/Kafka-compatible event bus where useful
+
+Before writing code:
+1. Inspect my existing project folder structure.
+2. Reuse existing patterns, utilities, middleware, Prisma client, auth middleware, RBAC helpers, tenant context, error handling, logger, response helpers, audit logging, and UI components.
+3. Do not delete unrelated code.
+4. Do not overwrite working modules.
+5. Do not break existing authentication, registration, login/logout, password reset, MFA, sessions, users, RBAC, tenants, ingestion, search, alerts, incidents, AI, dashboards, or other modules already implemented.
+6. If a file already exists, update it carefully and show the complete final version.
+
+==================================================
+MODULE OBJECTIVE
+==================================================
+
+Build Module 9: Role-Based Access Control Module.
+
+The module must provide a complete production implementation for its responsibility inside the SIEM platform.
+
+The module must include:
+1. Backend API routes.
+2. Service/business logic layer.
+3. Repository/database access layer.
+4. Zod validation schemas.
+5. Prisma schema changes when needed.
+6. Security controls and safe error handling.
+7. Audit logging for important actions.
+8. Frontend React page/components when the module has user-facing UI.
+9. API client functions on the frontend.
+10. Tests for core success, failure, authorization, and edge cases.
+11. Environment variable support where configuration is needed.
+12. Setup and usage instructions.
+
+==================================================
+FUNCTIONAL REQUIREMENTS
+==================================================
+
+Implement the complete feature set for Role-Based Access Control Module.
+
+At minimum, include:
+1. Create/list/read/update/delete operations where applicable.
+2. Search, filter, sort, and pagination where the module manages records.
+3. Tenant-aware design if tenant management exists.
+4. RBAC permission checks if RBAC exists.
+5. Admin, analyst, and MSSP workflow support where applicable.
+6. Safe user-facing error messages.
+7. Structured API responses.
+8. Structured audit events.
+9. Integration with related SIEM entities such as users, tenants, agents, assets, events, alerts, incidents, detections, dashboards, reports, threat intelligence, SOAR, compliance, AI services, or storage depending on this module.
+10. Future-ready extension points without overengineering.
+
+Success response format:
+{
+  "success": true,
+  "message": "Operation completed successfully.",
+  "data": {}
+}
+
+Error response format:
+{
+  "success": false,
+  "message": "Safe user-facing message.",
+  "code": "ROLE_BASED_ACCESS_CONTROL_MODULE_ERROR"
+}
+
+==================================================
+SECURITY REQUIREMENTS
+==================================================
+
+Follow enterprise security requirements:
+1. Validate every request body, query parameter, and route parameter with Zod.
+2. Enforce authentication on protected endpoints.
+3. Enforce authorization/RBAC checks where relevant.
+4. Enforce tenant isolation where tenant context exists.
+5. Never expose secrets, tokens, hashes, API keys, raw credentials, private keys, or sensitive internal fields.
+6. Never log passwords, tokens, secrets, raw API keys, private keys, or sensitive payloads.
+7. Use safe error responses without stack traces.
+8. Apply rate limiting to sensitive or write-heavy endpoints.
+9. Add audit logging for create, update, delete, execute, enable, disable, export, import, and security-sensitive actions.
+10. Use database transactions for multi-step changes.
+11. Use pagination limits to prevent memory abuse.
+12. Sanitize and normalize inputs where appropriate.
+13. Use least privilege design.
+14. Add defensive checks against IDOR and cross-tenant access.
+15. Keep code ready for compliance audits.
+
+==================================================
+RELIABILITY REQUIREMENTS
+==================================================
+
+The implementation must be production-reliable:
+1. Use centralized error handling.
+2. Handle database errors safely.
+3. Avoid race conditions with transactions and unique constraints.
+4. Make write operations idempotent where practical.
+5. Support retry-safe logic where applicable.
+6. Add health/status endpoint or status fields if relevant.
+7. Add structured logs without leaking sensitive data.
+8. Use indexes for common queries.
+9. Avoid slow unbounded queries.
+10. Include test fixtures/factories if tests require them.
+
+==================================================
+DATABASE REQUIREMENTS
+==================================================
+
+Update Prisma schema only if needed.
+
+Design appropriate models, enums, relations, and indexes for Role-Based Access Control Module. Reuse existing models where possible instead of duplicating.
+
+Common fields for new tables:
+- id
+- tenantId nullable if tenant support exists
+- createdById nullable where relevant
+- updatedById nullable where relevant
+- createdAt
+- updatedAt
+- deletedAt nullable if soft delete is useful
+- status where lifecycle state is needed
+
+Add indexes for:
+- tenantId
+- createdAt
+- updatedAt
+- status fields
+- foreign keys
+- fields used for search/filtering
+
+If this module stores sensitive values:
+- Store only hashes where possible.
+- Encrypt secrets at rest using existing encryption utility or AES-256-GCM.
+- Never return secret values after initial creation unless explicitly safe and required.
+
+==================================================
+API REQUIREMENTS
+==================================================
+
+Create clean REST endpoints for Role-Based Access Control Module.
+
+Preferred namespace:
+/api/role-based-access-control
+
+Recommended endpoint pattern:
+- GET /api/role-based-access-control/config
+- GET /api/role-based-access-control
+- GET /api/role-based-access-control/:id
+- POST /api/role-based-access-control
+- PATCH /api/role-based-access-control/:id
+- DELETE /api/role-based-access-control/:id
+- POST /api/role-based-access-control/:id/actions/{actionName} where workflows are required
+
+Every endpoint must include:
+1. Auth middleware where needed.
+2. Permission checks where needed.
+3. Tenant isolation where needed.
+4. Zod validation.
+5. Controller/service/repository separation.
+6. Consistent success/error responses.
+7. Audit logging for sensitive actions.
+
+==================================================
+FRONTEND REQUIREMENTS
+==================================================
+
+If this module has UI, build production React components.
+
+Create or update:
+- API client file
+- Page component
+- Form component
+- Table/list component if records are listed
+- Detail component if records have detail view
+- Status/empty/error/loading states
+- Validation schema
+
+Frontend behavior:
+1. Load data from backend safely.
+2. Show loading states.
+3. Show empty states.
+4. Show safe error messages.
+5. Support create, update, delete, import, export, execute, enable, or disable workflows where applicable.
+6. Confirm dangerous actions.
+7. Do not show protected UI before auth check completes.
+8. Respect RBAC/permissions from backend if available.
+9. Use professional enterprise SOC/SIEM styling.
+10. Use Tailwind CSS with responsive layout.
+
+UI style:
+- Dark SOC dashboard look
+- Clean enterprise design
+- Clear labels
+- Accessible controls
+- Responsive layout
+- No toy-like styling
+
+==================================================
+AUDIT LOGGING REQUIREMENTS
+==================================================
+
+Create audit logs for important events in Role-Based Access Control Module.
+
+Audit fields:
+- userId when available
+- tenantId when available
+- eventType
+- entityType
+- entityId when available
+- ipAddress
+- userAgent
+- success true/false
+- reason nullable
+- metadata with safe non-sensitive details
+- createdAt
+
+Suggested event names:
+- ROLE_BASED_ACCESS_CONTROL_MODULE_VIEWED
+- ROLE_BASED_ACCESS_CONTROL_MODULE_CREATED
+- ROLE_BASED_ACCESS_CONTROL_MODULE_UPDATED
+- ROLE_BASED_ACCESS_CONTROL_MODULE_DELETED
+- ROLE_BASED_ACCESS_CONTROL_MODULE_ENABLED
+- ROLE_BASED_ACCESS_CONTROL_MODULE_DISABLED
+- ROLE_BASED_ACCESS_CONTROL_MODULE_ACTION_EXECUTED
+- ROLE_BASED_ACCESS_CONTROL_MODULE_ACTION_FAILED
+- ROLE_BASED_ACCESS_CONTROL_MODULE_UNAUTHORIZED_ATTEMPT
+
+Never store secrets, tokens, raw credentials, or sensitive log payloads in audit records.
+
+==================================================
+TESTING REQUIREMENTS
+==================================================
+
+Write tests for:
+1. Successful create/action flow.
+2. Successful list/read flow.
+3. Successful update flow where applicable.
+4. Successful delete/revoke/disable flow where applicable.
+5. Validation failure.
+6. Unauthorized request blocked.
+7. Forbidden request blocked by RBAC where applicable.
+8. Cross-tenant access blocked where applicable.
+9. Safe error response.
+10. Audit log created for important action.
+11. Sensitive fields are not returned.
+12. Pagination/filtering works where applicable.
+13. Database constraint behavior if relevant.
+14. Existing previous modules still work.
+
+==================================================
+ACCEPTANCE CRITERIA
+==================================================
+
+The module is complete only when:
+1. Backend starts successfully.
+2. Prisma schema is valid.
+3. Migrations run successfully if schema changed.
+4. All new API endpoints work.
+5. All inputs are validated.
+6. Auth and permission checks work.
+7. Tenant isolation is respected where applicable.
+8. Audit logs are created.
+9. No sensitive data is leaked in responses or logs.
+10. Frontend UI works where applicable.
+11. Tests pass.
+12. Existing modules still work.
+13. Code is modular, readable, and production-ready.
+14. No hardcoded secrets exist.
+15. No TODOs or placeholder implementations remain in core logic.
+
+==================================================
+CODING QUALITY RULES
+==================================================
+
+Follow these rules:
+1. Use clean architecture.
+2. Controller handles HTTP only.
+3. Service handles business logic.
+4. Repository handles database access.
+5. Validation file handles Zod schemas.
+6. Audit file handles audit events.
+7. Keep utilities reusable.
+8. Use async/await correctly.
+9. Avoid duplicated logic.
+10. Use explicit names.
+11. Use safe defaults.
+12. Keep future modules easy to integrate.
+13. Do not overwrite unrelated files.
+14. Do not delete existing module code.
+15. Do not use placeholder code.
+
+==================================================
+OUTPUT REQUIREMENTS
+==================================================
+
+Give me complete final code.
+
+For every file:
+1. Show full file path.
+2. Show complete code.
+3. Do not omit imports.
+4. Do not use placeholder comments like "implement later".
+5. Do not leave TODOs for core logic.
+6. Explain where each file goes.
+7. Explain schema changes.
+8. Explain environment variables.
+9. Explain how to run migration.
+10. Explain how to start backend.
+11. Explain how to start frontend.
+12. Explain how to test.
+13. Provide curl examples.
+
+At the end, provide:
+1. Installation commands.
+2. Prisma migration command.
+3. Backend run command.
+4. Frontend run command.
+5. Test command.
+6. API examples using curl.
+7. Security checklist.
+8. Troubleshooting section.
+
+==================================================
+IMPORTANT FINAL INSTRUCTION
+==================================================
+
+First scan my project structure, detect existing files and modules, then implement Module 9: Role-Based Access Control Module without breaking any earlier modules.

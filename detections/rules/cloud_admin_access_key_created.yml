@@ -1,0 +1,22 @@
+title: Cloud Admin Created Access Key
+id: d1000000-0000-4000-8000-000000000003
+status: test
+description: Detects cloud IAM access key creation by an administrative principal.
+author: Inso SIEM
+date: 2026-04-21
+logsource:
+  product: aws
+  service: cloudtrail
+detection:
+  selection:
+    event_type: cloud
+    action: CreateAccessKey
+    status: success
+  condition: selection
+falsepositives:
+  - Planned credential rotation
+  - Break-glass account setup
+level: medium
+tags:
+  - attack.persistence
+  - attack.t1098

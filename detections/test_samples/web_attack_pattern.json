@@ -1,0 +1,6 @@
+{
+  "event_type": "web",
+  "url.full": "https://app.example/login?id=' OR 1=1",
+  "source.ip": "198.51.100.8",
+  "http.request.method": "GET"
+}

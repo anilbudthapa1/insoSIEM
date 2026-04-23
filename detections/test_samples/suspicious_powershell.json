@@ -1,0 +1,7 @@
+{
+  "event_type": "process",
+  "process.name": "powershell.exe",
+  "process.command_line": "powershell.exe -NoProfile -enc SQBFAFgA",
+  "host.name": "win-01",
+  "username": "bob"
+}

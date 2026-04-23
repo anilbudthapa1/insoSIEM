@@ -1,0 +1,8 @@
+{
+  "event_type": "cloud",
+  "action": "CreateAccessKey",
+  "status": "success",
+  "cloud.provider": "aws",
+  "user.name": "admin@example.com",
+  "cloud.account.id": "123456789012"
+}

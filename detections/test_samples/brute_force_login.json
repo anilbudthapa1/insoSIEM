@@ -1,0 +1,7 @@
+{
+  "event_type": "authentication",
+  "status": "failure",
+  "username": "alice",
+  "source.ip": "203.0.113.44",
+  "message": "Failed password for alice from 203.0.113.44"
+}

@@ -1,0 +1,23 @@
+title: Web Attack Pattern
+id: d1000000-0000-4000-8000-000000000004
+status: test
+description: Detects common SQL injection or XSS markers in web request URLs.
+author: Inso SIEM
+date: 2026-04-21
+logsource:
+  category: webserver
+detection:
+  selection:
+    event_type: web
+    url.full|contains:
+      - "' OR 1=1"
+      - "<script"
+      - "union select"
+  condition: selection
+falsepositives:
+  - Security scanners
+  - Web application tests
+level: high
+tags:
+  - attack.initial_access
+  - attack.t1190

@@ -1,0 +1,20 @@
+title: Multiple Failed Login Attempts
+id: d1000000-0000-4000-8000-000000000001
+status: test
+description: Detects repeated authentication failures from the same source or against the same user.
+author: Inso SIEM
+date: 2026-04-21
+logsource:
+  category: authentication
+detection:
+  selection:
+    event_type: authentication
+    status: failure
+  condition: selection
+falsepositives:
+  - Forgotten passwords
+  - Password manager retries
+level: high
+tags:
+  - attack.credential_access
+  - attack.t1110
