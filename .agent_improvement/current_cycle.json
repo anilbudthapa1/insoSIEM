@@ -1,8 +1,0 @@
-{
-  "cycle": 1,
-  "status": "paused_for_master_orchestrator",
-  "selected_improvements": ["IMP-001", "IMP-002", "IMP-003", "IMP-004", "IMP-005"],
-  "completed": ["IMP-001"],
-  "failed": [],
-  "next_cycle_candidates": ["IMP-006", "IMP-007", "IMP-008"]
-}
